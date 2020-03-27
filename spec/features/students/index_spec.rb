@@ -19,8 +19,20 @@ RSpec.describe 'As a visitor' do
 
     visit "/students"
 
-    expect(page).to have_content("Harry Potter: 3")
-    expect(page).to have_content("Draco Malfoy: 2")
-    expect(page).to have_content("Neville Longbottom: 1")
+    # expect(page).to have_content("Harry Potter: 3")
+    # expect(page).to have_content("Draco Malfoy: 2")
+    # expect(page).to have_content("Neville Longbottom: 1")
+
+    within("#p_0") do
+      expect(page).to have_content("Draco Malfoy: 2")
+    end
+
+    within("#p_1") do
+      expect(page).to have_content("Harry Potter: 3")
+    end
+
+    within("#p_2") do
+      expect(page).to have_content("Neville Longbottom: 1")
+    end
   end
 end
